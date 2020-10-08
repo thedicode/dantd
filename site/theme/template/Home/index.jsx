@@ -63,7 +63,7 @@ const HomePage = (props) => {
             <div className="img-wrapper">
               <a
                 target="_blank"
-                href="https://qr.dingtalk.com/action/joingroup?code=v1,k1,/5EJlq2mD/6YsUtJvut5YLqoLzab12EAzhkpFzbKaYY=&_dt_no_comment=1&origin=11"
+                href="https://qr.dingtalk.com/action/joingroup?code=v1,k1,2Vd6ejhTjOG/N3biCDrNJIll3BlVGlO+cTKhGZe9LLM=&_dt_no_comment=1&origin=11"
               >
                 <img src={qrcode} alt="" />
               </a>
