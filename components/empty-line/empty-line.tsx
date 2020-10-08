@@ -14,6 +14,7 @@ const EmptyLine = ({ height = 20, prefixCls = 'dantd', className, style }: IEmpt
     height,
     ...style,
   };
+
   return <div className={emptyLineClassName} style={emptyLineStyle} />;
 };
 
