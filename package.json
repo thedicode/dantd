@@ -2,7 +2,7 @@
   "name": "dantdv3",
   "version": "0.3.27",
   "description": "react components by antdv3",
-  "author": "joking_zhang <496691544@qq.com>",
+  "author": "zhangbx <zhangbx@didiglobal.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
