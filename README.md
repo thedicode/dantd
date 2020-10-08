@@ -1,6 +1,6 @@
 # dantd
 
-[预览地址](https://jokingzhang.github.io/dantd)
+[预览地址](https://thedicode.github.io/dantd)
 
 一个基于 [Antd-v3](https://github.com/ant-design/ant-design/) 所封装的业务组件库
 

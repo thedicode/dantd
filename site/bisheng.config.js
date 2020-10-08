@@ -5,7 +5,7 @@ module.exports = {
   theme: './site/theme',
   root: '/dantd/',
   themeConfig: {
-    logo: 'https://jokingzhang.github.io/dantd/static/logo.png',
+    logo: 'https://thedicode.github.io/dantd/static/logo.png',
     sitename: 'Dantd基础UI组件库',
     tagline: 'The one theme for bisheng',
     categoryOrder: {
