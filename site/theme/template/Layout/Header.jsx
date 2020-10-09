@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'bisheng/router';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import {
-  Select, Menu, Row, Col, Icon, Popover, Input, Button,
-} from 'antd';
-
+import { Select, Menu, Row, Col, Icon, Popover, Input, Button } from 'antd';
+import githubImg from './github.png';
 import * as utils from '../utils';
 
 const { Option } = Select;
@@ -30,23 +28,23 @@ export default class Header extends React.Component {
     router.listen(this.handleHideMenu);
   }
 
-  onMenuVisibleChange = (visible)  => {
+  onMenuVisibleChange = (visible) => {
     this.setState({
       menuVisible: visible,
     });
-  }
+  };
 
   handleHideMenu = () => {
     this.setState({
       menuVisible: false,
     });
-  }
+  };
 
   handleShowMenu = () => {
     this.setState({
       menuVisible: true,
     });
-  }
+  };
 
   /**
    * 切换版本
@@ -57,7 +55,7 @@ export default class Header extends React.Component {
     window.location.href = currentUrl
       .replace(window.location.origin, url)
       .replace(currentPathname, utils.getLocalizedPathname(currentPathname));
-  }
+  };
 
   /**
    * 改变语言
@@ -70,15 +68,16 @@ export default class Header extends React.Component {
     const currentHref = window.location.href.substr(currentProtocol.length);
 
     if (utils.isLocalStorageNameSupported()) {
-      localStorage.setItem('locale', utils.isZhCN(pathname) ? 'zh-CN' : 'en-US' );
+      localStorage.setItem('locale', utils.isZhCN(pathname) ? 'zh-CN' : 'en-US');
     }
 
-    window.location.href = currentProtocol
-      + currentHref.replace(
+    window.location.href =
+      currentProtocol +
+      currentHref.replace(
         window.location.pathname,
         utils.getLocalizedPathname(pathname, !utils.isZhCN(pathname)),
       );
-  }
+  };
 
   render() {
     const { menuVisible } = this.state;
@@ -127,15 +126,26 @@ export default class Header extends React.Component {
         <Row>
           <Col xxl={4} xl={5} lg={5} md={5} sm={24} xs={24}>
             <Link to={utils.getLocalizedPathname('/', isZhCN)} id="logo">
-              <img
-                alt="logo"
-                src={logoImg}
-              />
+              <img alt="logo" src={logoImg} />
               <span>{siteName}</span>
             </Link>
           </Col>
-          <Col xxl={20} xl={19} lg={19} md={19} sm={0} xs={0}>
+          <Col xxl={18} xl={17} lg={17} md={17} sm={0} xs={0}>
             {menu}
+          </Col>
+          <Col xxl={2} xl={2} lg={2} md={2} sm={0} xs={0}>
+            <a
+              style={{
+                display: 'block',
+                lineHeight: '60px',
+                textAlign: 'center',
+              }}
+              href="https://github.com/thedicode/dantd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img width="25" alt="github" src={githubImg} />
+            </a>
           </Col>
         </Row>
       </header>
