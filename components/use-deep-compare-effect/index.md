@@ -13,7 +13,7 @@ subtitle: 深比较Effect
 
 ```jsx
 import { useState } from 'react';
-import { useDeepCompareEffect } from 'dantdv3';
+import { useDeepCompareEffect } from 'antd-advanced';
 
 const Demo = () => {
   const [count, setCount] = useState(0);

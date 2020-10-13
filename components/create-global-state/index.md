@@ -28,7 +28,7 @@ setState(prevState => {
 ### Demo
 
 ```jsx
-import { createGlobalState } from 'dantdv3';
+import { createGlobalState } from 'antd-advanced';
 
 const useGlobalValue = createGlobalState<number>(0);
 

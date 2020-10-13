@@ -7,7 +7,7 @@ title: 选择
 
 
 ```jsx
-import { DataTable as Table, useAsync } from 'dantdv3';
+import { DataTable as Table, useAsync } from 'antd-advanced';
 import { Button, Tabs, DatePicker, Form } from 'antd';
 import moment from 'moment';
 

@@ -6,7 +6,7 @@ title: 禁用
 使用 `disabled` 属性，禁用组件。
 
 ```jsx
-import { Switch, EmptyLine } from 'dantdv3';
+import { Switch, EmptyLine } from 'antd-advanced';
 
 ReactDOM.render(
   <div style={{

@@ -12,7 +12,7 @@ subtitle: 间隔
 
 
 ```jsx
-import { useTimeout } from 'dantdv3';
+import { useTimeout } from 'antd-advanced';
 
 function TestComponent(props: { ms?: number } = {}) {
   const ms = props.ms || 5000;

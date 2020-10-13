@@ -7,7 +7,7 @@ title: query 紧凑模式
 
 
 ```jsx
-import { DataTable } from 'dantdv3';
+import { DataTable } from 'antd-advanced';
 import { Button } from 'antd';
 import moment from 'moment';
 

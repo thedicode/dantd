@@ -7,7 +7,7 @@ title: query 模式
 
 ```jsx
 import { useState } from 'react';
-import { BasicTable, useAsyncRetry } from 'dantdv3';
+import { BasicTable, useAsyncRetry } from 'antd-advanced';
 import { Button, Divider, Typography } from 'antd';
 
 const columns = [

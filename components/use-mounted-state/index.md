@@ -14,7 +14,7 @@ subtitle: Mounted
 
 
 ```jsx
-import { useMountedState } from 'dantdv3';
+import { useMountedState } from 'antd-advanced';
 
 
 const Demo = () => {

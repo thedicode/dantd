@@ -47,5 +47,5 @@ addWebpackPlugin(new AntDesignThemePlugin(options))
 // antd variables
 @import '~antd/es/style/themes/default.less';
 // dantd variables
-@import '~dantdv3/es/style/themes.less';
+@import '~antd-advanced/es/style/themes.less';
 ```

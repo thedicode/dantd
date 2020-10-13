@@ -6,7 +6,7 @@ title: 多选
 多选，从已有条目中选择。
 
 ```jsx
-import { VirtualSelect as Select } from 'dantdv3';
+import { VirtualSelect as Select } from 'antd-advanced';
 
 const { Option } = Select;
 

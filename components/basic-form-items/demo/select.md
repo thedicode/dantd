@@ -8,8 +8,8 @@ title: Select
 
 ```jsx
 import React, {useState} from 'react';
-import { BasicFormItems, EmptyLine } from 'dantdv3';
-import { processBasicFormItemsData } from 'dantdv3/utils';
+import { BasicFormItems, EmptyLine } from 'antd-advanced';
+import { processBasicFormItemsData } from 'antd-advanced/utils';
 import { Form, Button } from 'antd';
 
 

@@ -14,13 +14,13 @@ title: Dantd of React
 ## 安装
 
 ```
-$ npm install dantdv3
+$ npm install antd-advanced
 ```
 
 ## 示例
 
 ```jsx
-import { EmptyLine } from 'dantdv3';
+import { EmptyLine } from 'antd-advanced';
 
 ReactDOM.render(<EmptyLine />, mountNode);
 ```
