@@ -1,5 +1,5 @@
 import { DependencyList, EffectCallback } from 'react';
-import isDeepEqualReact from 'fast-deep-equal/react';
+import isDeepEqualReact from 'react-fast-compare';
 import useCustomCompareEffect from './useCustomCompareEffect';
 
 const isDeepEqual: (a: any, b: any) => boolean = isDeepEqualReact;

@@ -16,7 +16,7 @@
 # Installation
 
 ```
-$ npm install
+$ npm install antd-advanced
 ```
 
 # Usage
