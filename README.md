@@ -31,6 +31,9 @@ $ npm test
 # 文档构建
 $ npm run site
 
+# 文档发布
+$ npm run deploy
+
 # 打包
 $ npm run build
 ```
@@ -93,7 +96,7 @@ $ npm run build
 
 更多请参考：[手摸手，打造属于自己的 React 组件库 —— 测试篇](https://juejin.im/post/6844904054351462408)
 
-### 发布
+### 打包&发布
 
 ```
 $ npm run build
@@ -124,5 +127,6 @@ npm start
 ### 构建文档
 
 ```
-npm run build
+npm run site
 ```
+
