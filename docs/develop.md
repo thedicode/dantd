@@ -3,12 +3,10 @@ order: 1
 title: 如何开发一个组件？
 ---
 
-> 本篇待完善
-
 ## 注意事项
 
 - 组件，以及文档的文件命名，需要使用「小写」+「-」的形式，否则会有识别问题。
-
+- git分支规范参考 [git-commit-style-guide](https://github.com/feflow/git-commit-style-guide/blob/master/doc/GIT_COMMIT_STANDARD.md)
 ## 组件
 
 ### 开发
