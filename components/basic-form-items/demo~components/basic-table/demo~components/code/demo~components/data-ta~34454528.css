@@ -1730,11 +1730,12 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   text-align: right;
   word-break: break-word;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.85);
 }
 .dantd-desc-item {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 4px;
   font-size: 12px;
 }
@@ -1759,6 +1760,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   position: relative;
   flex: 0 1 auto;
   width: 80px;
+  margin-right: 12px;
   word-break: break-word;
   text-align: right;
   line-height: 1.8;
@@ -1780,7 +1782,6 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
 .dantd-desc-item-content {
   flex: 1;
   width: auto;
-  margin-left: 16px;
   word-break: break-word;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.65);
