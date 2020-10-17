@@ -16,7 +16,7 @@ export const data = [
   },
   {
     title: 'VIP',
-    content: '192.168.0.1',
+    content: '192.168.0.0',
   },
   {
     title: 'VIP 端口',
@@ -33,9 +33,9 @@ export const data = [
   {
     title: '域名地址',
     content: (
-      <Paragraph copyable={{ text: 'http://i.xiaojukeji.com/' }}>
-        <a rel="noopener noreferrer" target="_blank" href={'http://i.xiaojukeji.com/'}>
-          {'http://i.xiaojukeji.com/'}
+      <Paragraph copyable={{ text: 'http://xxx.com/' }}>
+        <a rel="noopener noreferrer" target="_blank" href={'http://xxx.com/'}>
+          {'http://xxx.com/'}
         </a>
       </Paragraph>
     ),
