@@ -3,8 +3,8 @@ var path = require('path');
 module.exports = {
   port: 8078,
   theme: './site/theme',
-  // root: '/dantd/',
-  root: '/',
+  root: '/dantd/',
+  // root: '/',
   themeConfig: {
     logo: 'https://thedicode.github.io/dantd/static/logo.png',
     sitename: 'Dantd基础UI组件库',
