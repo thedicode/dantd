@@ -56,12 +56,12 @@ ReactDOM.render(
   <Row gutter={18}>
     <Col span={12}>
       <Card title={'番剧'}>
-        <Descriptions titleWidth={160} title="番剧推荐" dataSource={data1} />
+        <Descriptions titleAlign="left" titleWidth={160} title="番剧推荐" dataSource={data1} />
       </Card>
     </Col>
     <Col span={12}>
       <Card title={'请求信息'}>
-        <Descriptions titleWidth={150} dataSource={data2} />
+        <Descriptions showColon titleWidth={150} dataSource={data2} />
       </Card>
     </Col>
   </Row>

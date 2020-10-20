@@ -3,17 +3,20 @@ order: 1
 title: 如何开发一个组件？
 ---
 
-> 本篇待完善
-
 ## 注意事项
 
 - 组件，以及文档的文件命名，需要使用「小写」+「-」的形式，否则会有识别问题。
+- git分支规范参考 [git-commit-style-guide](https://github.com/feflow/git-commit-style-guide/blob/master/doc/GIT_COMMIT_STANDARD.md)
 
 ## 组件
 
 ### 开发
 
-在 `src` 目录下，新增一个组件的目录，类似上面的 `empty-line` 组件。目录名需要保持**小写**。如果是自定义组件，需要取一个 `antd` 中所不包含的组件名称。添加完文件之后，在 `entry/config.tsx` 中增加 `demo` 的配置。此时应该可以看到组件，并继续开发了。
+在 `src` 目录下，新增一个组件的目录，类似上面的 `empty-line` 组件。目录名需要保持**小写**。如果是自定义组件，最好需要取一个 `antd` 中所不包含的组件名称。添加完文件之后，在 `entry/config.tsx` 中增加 `demo` 的配置。此时应该可以看到组件，并继续开发了。
+
+### 样式
+
+命名规范主要参考 antd 的样式命名，一种类似 [BEM](http://getbem.com/) 的方式
 
 ##### 设置样式前缀
 
@@ -44,6 +47,8 @@ title: 如何开发一个组件？
 ```
 
 ##### 国际化
+
+> 类组件使用国际化的方式待补充
 
 组件库中提供了两个国际化工具，自定义hooks `useIntl` ，高阶组件 `withIntl` 。使用方式如下：
 
@@ -98,4 +103,10 @@ npm start
 
 ```
 npm run site
+```
+
+### 发布文档
+
+```
+npm run deploy
 ```

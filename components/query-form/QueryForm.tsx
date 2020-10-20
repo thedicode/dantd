@@ -17,8 +17,8 @@ export declare type ColumnType = typeof ColumnTypes[number];
 declare const ModeTypes: ['full', 'align', string];
 export declare type ModeType = typeof ModeTypes[number];
 
-declare const ValueTypes: ['query', 'object', string];
-export declare type ValueType = typeof ValueTypes[number];
+declare const ColTypes: ['grid', 'style', string];
+export declare type ColType = typeof ColTypes[number];
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -28,7 +28,9 @@ export interface IColumnsType {
   dataIndex: string;
   title: string | React.ReactNode;
   placeholder?: string;
+  valuePropName?: string;
   required?: boolean;
+  colStyle?: React.CSSProperties;
   initialValue?: any;
   size?: ItemSize;
   rules?: any[]; // 校验规则
@@ -48,7 +50,9 @@ export interface IQueryFormProps extends FormComponentProps {
   className?: string;
   style?: React.CSSProperties;
   mode?: ModeType;
-  valueType?: ValueType;
+  colMode?: ColType;
+  defaultColStyle?: React.CSSProperties;
+  columnStyleHideNumber?: number;
   columns: IColumnsType[];
   searchText?: string | React.ReactNode;
   resetText?: string | React.ReactNode;
@@ -160,6 +164,11 @@ const QueryForm = (props: IQueryFormProps) => {
     getFormInstance,
     columns = [] as IColumnsType[],
     mode = 'full',
+    colMode = 'grid',
+    columnStyleHideNumber = 1,
+    defaultColStyle = {
+      width: '300px',
+    },
     // valueType = 'object',
   } = props;
 
@@ -311,6 +320,7 @@ const QueryForm = (props: IQueryFormProps) => {
       required,
       placeholder,
       rules,
+      valuePropName = 'value',
       component,
     } = colItem;
 
@@ -341,6 +351,7 @@ const QueryForm = (props: IQueryFormProps) => {
         {getFieldDecorator(dataIndex as string, {
           initialValue,
           rules: rules || itemRules,
+          valuePropName,
         })(component)}
       </FormItem>
     );
@@ -352,8 +363,26 @@ const QueryForm = (props: IQueryFormProps) => {
         ? getOffset(columns.length, colSize)
         : getOffset(collapseHideNum, colSize)
       : getOffset(columns.length, colSize);
+    let optionStyle = {};
+    if (colMode === 'style') {
+      optionStyle = {
+        position: 'absolute',
+        width: 265,
+        bottom: 0,
+        right: 0,
+        marginLeft: 0,
+      };
+    }
     return (
-      <Col {...itemColConfig} offset={offsetVal} key="option" className={`${prefixCls}-option`}>
+      <Col
+        {...itemColConfig}
+        offset={offsetVal}
+        key="option"
+        className={`${prefixCls}-option`}
+        style={{
+          ...optionStyle,
+        }}
+      >
         <Form.Item>
           <span>
             <Button onClick={handleReset}>{resetText || t('queryform.reset')}</Button>
@@ -418,12 +447,21 @@ const QueryForm = (props: IQueryFormProps) => {
       <div className={wrapperClassName} style={style}>
         <Row gutter={16} justify="start">
           {columns.map((colItem, colIndex) => {
-            const itemHide = collapsed && collapseHideNum <= colIndex;
+            let itemHide = collapsed && collapseHideNum <= colIndex;
+            let colItemStyle = {};
+            if (colMode === 'style') {
+              colItemStyle = colItem.colStyle || defaultColStyle;
+              if (collapsed && colIndex >= columnStyleHideNumber) {
+                itemHide = true;
+              }
+            }
+            colItemStyle = {
+              ...colItemStyle,
+              display: itemHide ? 'none' : 'block',
+            };
             return (
               <Col
-                style={{
-                  display: itemHide ? 'none' : 'block',
-                }}
+                style={colItemStyle}
                 key={`query-form-col-${colItem.dataIndex}-${colIndex}`}
                 {...itemColConfig}
               >

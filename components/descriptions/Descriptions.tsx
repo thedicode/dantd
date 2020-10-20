@@ -7,14 +7,19 @@ export interface IDescriptionItem {
   mainTitle?: string | number | React.ReactNode;
 }
 
+declare const AlignTypes: ['left', 'right'];
+export declare type AlignType = typeof AlignTypes[number];
+
 export interface IDescriptionsProps {
   prefixCls?: string;
   className?: string;
   bordered?: boolean;
   style?: React.CSSProperties;
-  title?: string;
+  title?: string | React.ReactNode;
+  titleStyle?: React.CSSProperties;
   showColon?: boolean;
   titleWidth?: number | string;
+  titleAlign?: AlignType;
   itemTitleStyle?: React.CSSProperties;
   itemContentStyle?: React.CSSProperties;
   dataSource: IDescriptionItem[];
@@ -28,24 +33,31 @@ const Descriptions: React.FC<IDescriptionsProps> = (props) => {
     className,
     bordered = false,
     style,
+    titleAlign = 'right',
     showColon = false,
+    titleStyle,
   } = props;
   const descClassName = classNames(prefixCls, bordered && `${prefixCls}-bordered`, className);
   const wrapperStyle = {
     ...style,
   };
   const defaultTitleWidth = 80;
-  const titleStyle = {
+  const mainTitleStyle = {
     width: props.titleWidth ? props.titleWidth : defaultTitleWidth,
+    textAlign: titleAlign,
+    ...titleStyle,
   };
 
-  const itemTitleClassName = classNames(
-    `${prefixCls}-item-title`,
-    showColon && `${prefixCls}-item-title-colon`,
-  );
+  // const itemTitleClassName = classNames(
+  //   `${prefixCls}-item-title`,
+  //   showColon && `${prefixCls}-item-title-colon`,
+  // );
+
+  const itemTitleClassName = `${prefixCls}-item-title`;
 
   const localItemTitleStyle = {
     width: props.titleWidth ? props.titleWidth : defaultTitleWidth,
+    textAlign: titleAlign,
     ...itemTitleStyle,
   };
 
@@ -55,7 +67,7 @@ const Descriptions: React.FC<IDescriptionsProps> = (props) => {
     <div className={descClassName} style={wrapperStyle}>
       {dataSource.length === 0 && '- -'}
       {props.title && (
-        <h3 style={titleStyle} className={`${prefixCls}-title`}>
+        <h3 style={mainTitleStyle} className={`${prefixCls}-title`}>
           {props.title}
         </h3>
       )}
@@ -70,6 +82,7 @@ const Descriptions: React.FC<IDescriptionsProps> = (props) => {
           <div key={`${prefixCls}-${dataItemIdx}`} className={`${prefixCls}-item`}>
             <div style={localItemTitleStyle} className={itemTitleClassName}>
               {dataItem.title ? dataItem.title : '- -'}
+              {showColon && ':'}
             </div>
             <div style={itemContentStyle} className={`${prefixCls}-item-content`}>
               {dataItem.content ? dataItem.content : '- -'}
