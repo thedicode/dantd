@@ -367,7 +367,7 @@ const QueryForm = (props: IQueryFormProps) => {
     if (colMode === 'style') {
       optionStyle = {
         position: 'absolute',
-        width: 265,
+        width: 280,
         bottom: 0,
         right: 0,
         marginLeft: 0,
