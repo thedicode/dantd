@@ -13,7 +13,7 @@ import moment from 'moment';
 
 
 
-const listUrl = 'https://easy-mock.com/mock/5f7e96fbf9d9bd19dca629b0/dantd/list?_d=123';
+const listUrl = 'https://service-dmgco1kc-1302187237.gz.apigw.tencentcs.com/release/table_api';
 const columns = [
   {
     title: '标题',

@@ -17,12 +17,15 @@ cols: 1
 | 参数       | 说明           | 类型                | 默认值 |
 | :--------- | :------------- | :------------------ | :----- |
 | title      | 标题           | string              | -      |
-| titleWidth      | 标题宽度           | string \| number              |  '80px' \| 80      |
+| titleStyle      | 标题           | string              | -      |
+| titleWidth      | 自定义标题的样式           | React.CSSProperties              |  -      |
+| titleAlign      | 标题对齐方式           | `['left', 'right']`              |  `'right'`     |
 | dataSource | 需要展示的信息 | Descriptions.Item[] | -      |
 | itemTitleStyle | 自定义详情标题的样式 | React.CSSProperties | -      |
 | itemContentStyle | 自定义详情内容的样式 | React.CSSProperties | -      |
 | bordered | 是否需要边框 | boolean | false |
 | style | 自定义组件容器的样式 | React.CSSProperties | - |
+| showColon | 是否展示标题后面的冒号 | boolean | false |
 
 ### Descriptions.Item
 

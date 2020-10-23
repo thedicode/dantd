@@ -1,10 +1,9 @@
 ---
-order: 0
-title: 基本
+order: 2
+title: 自定义Column长度
 ---
 
-和 `Table` 组件类似，传入 `columns` 属性，会自动生成 `QueryForm`。
-监听 `onChange` 属性使用起返回值进行 `query` 查询。
+自定义 Column 的长度等样式。但是此时收起时，无法计算需要隐藏的 Column 的宽度，现在收起时默认只展示一项，可以通过 `columnStyleHideNumber` 设置
 
 ```jsx
 import { useState } from 'react';
@@ -16,6 +15,9 @@ const columns = [
     type: 'input',
     title: '实例名称',
     dataIndex: 'name',
+    colStyle: {
+      width: '600px'
+    }
   },
   {
     type: 'select',
@@ -84,6 +86,7 @@ const Demo: React.FC = () => {
   return (
     <div>
       <QueryForm 
+        colMode="style"
         onChange={handleChange} 
         columns={columns} 
       />

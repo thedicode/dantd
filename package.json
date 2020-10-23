@@ -1,6 +1,6 @@
 {
   "name": "antd-advanced",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "react components by antdv3",
   "author": "zhangbx <zhangbx@didiglobal.com>",
   "license": "MIT",
@@ -45,8 +45,7 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
-    "antd": ">=3.26.18",
-    "jquery": ">=3.0.0"
+    "antd": ">=3.26.18"
   },
   "dependencies": {
     "antd": "^3.26.18",

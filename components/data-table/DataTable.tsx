@@ -581,6 +581,8 @@ function DataTable<T>(props: IDataTableProps<T>) {
     // } else {
     // }
     setQueryFormValues(data);
+    let fetchParams = getAllFetchParams();
+    fetchData(fetchParams);
   };
 
   const getAllFetchParams = () => {

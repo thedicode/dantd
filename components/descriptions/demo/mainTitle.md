@@ -68,7 +68,7 @@ ReactDOM.render(
       <Descriptions title="工单信息" titleWidth={70} bordered dataSource={data1} />
     </Col>
     <Col span={12}>
-      <Descriptions title="更改配置信息" titleWidth={90} bordered dataSource={data2} />
+      <Descriptions title="更改配置信息" titleWidth={100} bordered dataSource={data2} />
     </Col>
   </Row>
 , mountNode);
