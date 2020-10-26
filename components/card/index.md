@@ -21,16 +21,9 @@ subtitle: 卡片
 | style |样式 | React.CSSProperties | - |  
 | icon | 图标或图片，支持传入antd的icon或img | ReactNode | - |  
 | subTitle | 数字标题 | string | - |  
-| siderData | 指标数据 | object[] | [] |  
+| siderData | 指标数据 | {label: string, value: string\|number}[] | [] |  
 | showProgress | 是否展示进度条 | boolean | false | 
 | progressLabel | 指标标识文案 | string | - | 
 | progressPercent | 进度比例(0-100) | number | - | 
 | footerDom | 自定义底部 | ReactNode | - | 
-| prefixCls | 样式前缀 | string | - | 
-
-### siderData 
-
-| 参数 | 说明 | 类型 | 默认值 
-| --- | --- | --- | --- | --- |
-| label | 指标名 | string | - |  
-| value | 数据 | string\|number| -  | 
+| prefixCls | 样式前缀 | string | - |
