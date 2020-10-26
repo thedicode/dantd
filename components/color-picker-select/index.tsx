@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from 'antd';
 import { ColorResult, Color } from 'react-color';
 import ColorPickerModal from './ColorPickerModal';
-import './style.less';
+import './style/index.less';
 
 interface ColorSelectProps {
   prefixCls?: string;
@@ -25,6 +25,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
   onChange,
   value,
 }) => {
+  let initial = false;
   const [visible, setVisible] = useState(false);
   const [color, setColor] = useState(value || (defaultValue as Color));
   const [val, setVal] = useState(value || defaultValue);
@@ -35,7 +36,11 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
   };
 
   useEffect(() => {
-    setVal(value);
+    // 滤掉初始值
+    if (!(!initial && value === undefined)) {
+      setVal(value);
+      initial = true;
+    }
   }, [value]);
 
   const handleSelect = () => {
@@ -50,6 +55,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
     e.stopPropagation();
     setVal('');
     setColor('');
+    onChange && onChange('');
   };
 
   const rprefixCls = `${prefixCls || 'dantd'}-color-select`;
@@ -61,7 +67,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
             style={{ color: white, backgroundColor: val }}
             className={`${rprefixCls}-selected-value`}
           >
-            {val || defaultValue}
+            {val}
             {!disabled && allowClear && (
               <span onClick={clearInput} className={`${rprefixCls}-selected-close`}>
                 <Icon type="close-circle" />
@@ -70,7 +76,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
           </div>
         </div>
         <span className={`${rprefixCls}-icon`}>
-          <Icon type="bg-colors" />
+          <Icon type="down" />
         </span>
       </div>
       {/* 非可插拔, 考虑换成children吧 */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal } from 'antd';
 import { SketchPicker } from 'react-color';
-import './style.less';
+// import './style/index.less';
 
 interface IColorPickerProps {
   visible?: boolean;

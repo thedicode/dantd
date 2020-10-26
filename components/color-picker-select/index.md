@@ -6,7 +6,7 @@ component: color-picker-select
 
 ## 简介
 
-结合react-color的<SketchPicker /> 实现
+结合react-color的SketchPicker实现
 
 
 ## API
