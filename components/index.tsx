@@ -9,6 +9,7 @@ export { default as VirtualSelect } from './virtual-select';
 // forms
 export { default as BasicFormItems } from './basic-form-items';
 export { default as QueryForm } from './query-form';
+export { default as ColorPickerSelect } from './color-picker-select';
 
 // hooks
 export { default as useDebounce } from './use-debounce';

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'antd';
 import { ColorResult, Color } from 'react-color';
-import ColorPickerModal from './color-picker-modal';
+import ColorPickerModal from './ColorPickerModal';
 import './style.less';
 
 interface ColorSelectProps {
   prefixCls?: string;
-  className?: string;
   defaultValue?: string;
   value?: string;
+  // 向外
+  className?: string;
+  onChange?: (v: string) => void;
   disabled?: boolean;
   allowClear?: boolean;
 }
@@ -20,6 +22,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
   defaultValue = white,
   allowClear = true,
   disabled = false,
+  onChange,
   value,
 }) => {
   const [visible, setVisible] = useState(false);
@@ -28,6 +31,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
   const changeColor = (v: ColorResult) => {
     setColor(v.hsl);
     setVal(v.hex);
+    onChange && onChange(v.hex);
   };
 
   useEffect(() => {
@@ -69,6 +73,7 @@ const ColorSelect: React.FC<ColorSelectProps> = ({
           <Icon type="bg-colors" />
         </span>
       </div>
+      {/* 非可插拔, 考虑换成children吧 */}
       {!disabled && (
         <ColorPickerModal
           title="拾色器"

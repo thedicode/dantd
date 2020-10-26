@@ -85,3 +85,65 @@
   
 }
 
+
+@dantd-color-picker-prefix-cls: ~'@{dantd-prefix}-color-picker';
+
+.@{dantd-color-picker-prefix-cls} {
+  position: absolute;
+  top: 0px;
+  left: -240px;
+  z-index: 100;
+  width: 220px!important;
+  padding-bottom: 0!important;
+  border-top: 1px solid #ccc;
+  box-sizing: initial;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(0, 0, 0, 0.15) 0px 8px 16px;
+
+  .ant-modal-header {
+    padding: 4px 10px;
+  }
+
+  .ant-modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+
+  .ant-modal-close-x {
+    width: 42px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+  }
+
+  .ant-modal-title {
+    font-size: 12px;
+  }
+  .sketch-picker  {
+    box-shadow: none!important;
+  }
+
+  &-title {
+    text-align: left;
+    margin: 0 0 0 10px;
+  }
+}
+
+.@{dantd-color-picker-prefix-cls}-show {
+  display: block
+}
+
+.@{dantd-color-picker-prefix-cls}-hidden {
+  display: none;
+}
+
