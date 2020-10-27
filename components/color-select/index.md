@@ -5,10 +5,13 @@ title: ColorSelect
 subtitle: 拾色选择器
 ---
 
-## 简介
+## 何时使用
 
-结合react-color的SketchPicker实现
+需要使用 `hex` 模式，选择颜色时；可结合 form 表单使用。
 
+### TODO
+
+支持 `RGB` 模式等更多扩展
 
 ## API
 
