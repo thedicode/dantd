@@ -1,0 +1,27 @@
+@import '../../style/index.less';
+@import '~antd/es/style/themes/default.less';
+
+@dantd-color-select-prefix-cls: ~'@{dantd-prefix}-color-select';
+
+.@{dantd-color-select-prefix-cls} {
+  position: relative;
+
+  &-input-bg {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    right: 52px;
+    bottom: 5px;
+    border-radius: 2px;
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  input {
+    text-align: center !important;
+    background-color: transparent;
+    color: transparent;
+  }
+}
