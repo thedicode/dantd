@@ -26,4 +26,5 @@ export default {
   'queryform.search': 'Search',
   'queryform.collapsed': 'Collapsed',
   'queryform.expand': 'Expand',
+  'color.placeholder': 'Please select color',
 };
