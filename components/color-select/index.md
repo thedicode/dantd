@@ -2,7 +2,7 @@
 category: 组件
 type: 数据录入
 title: ColorSelect
-subtitle: 拾色选择器
+subtitle: 颜色选择器
 ---
 
 ## 何时使用
