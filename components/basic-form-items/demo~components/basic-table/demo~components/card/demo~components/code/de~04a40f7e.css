@@ -8183,6 +8183,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .dantd-color-select {
   position: relative;
+  display: flex;
 }
 .dantd-color-select-input-bg {
   position: absolute;
@@ -8191,6 +8192,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   right: 52px;
   bottom: 5px;
   border-radius: 2px;
+  line-height: 22px;
   background-color: transparent;
   text-align: center;
   color: #fff;
@@ -9143,10 +9145,16 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   color: rgba(0, 0, 0, 0.6);
   font-size: 12px;
 }
+.dantd-card-bottom .battery .bg-full-percent,
 .dantd-card-bottom .battery .bg-percent {
-  background-color: #f97370;
   opacity: 0.5;
   height: 100%;
+}
+.dantd-card-bottom .battery .bg-full-percent {
+  background-color: #f97370;
+}
+.dantd-card-bottom .battery .bg-percent {
+  background-color: #6f91d0;
 }
 .dantd-card.card-gray {
   background-color: rgba(111, 145, 208, 0.1);
@@ -9194,7 +9202,11 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
 .dantd-card.card-success .battery > .bg-percent,
 .dantd-card.card-error .battery > .bg-percent,
 .dantd-card.card-info .battery > .bg-percent,
-.dantd-card.card-warning .battery > .bg-percent {
+.dantd-card.card-warning .battery > .bg-percent,
+.dantd-card.card-success .bg-full-percent,
+.dantd-card.card-error .bg-full-percent,
+.dantd-card.card-info .bg-full-percent,
+.dantd-card.card-warning .bg-full-percent {
   background-color: #fff;
   opacity: 1;
 }
