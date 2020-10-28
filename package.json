@@ -57,7 +57,7 @@
     "codemirror": "^5.56.0",
     "react-syntax-highlighter": "13.4.0",
     "react-codemirror2": "7.2.1",
-    "react-color": "^2.17.3",
+    "react-color": "2.18.1",
     "rc-select": "^11.0.11"
   },
   "devDependencies": {
@@ -125,6 +125,8 @@
     "scrollama": "^2.0.0",
     "shelljs": "^0.8.4",
     "ts-jest": "24.1.0",
+    "echarts": "^4.9.0",
+    "echarts-for-react": "^2.0.16",
     "typescript": "3.7.5"
   },
   "eslintConfig": {
