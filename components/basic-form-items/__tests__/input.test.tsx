@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'antd';
-import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import BasicFormItems from '../BasicFormItems';
 import { processBasicFormItemsData } from '../../utils';

@@ -25,4 +25,5 @@ export default {
   'queryform.search': '查询',
   'queryform.collapsed': '收起',
   'queryform.expand': '展开',
+  'color.placeholder': '请选择颜色',
 };

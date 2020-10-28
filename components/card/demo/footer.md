@@ -12,11 +12,7 @@ import { Icon } from 'antd';
 import ReactEcharts from 'echarts-for-react';
 
 const BasicExample: React.FC = () => { 
-  interface IGraphData {
-    xdata: any[],
-    ydata: any[],
-  }
-  function getLineChart(grahData: IGraphData = {xdata: [], ydata: []}) {
+  function getLineChart(grahData = {xdata: [], ydata: []}) {
     const option = {
       color: ['#fff'],
       tooltip: {
