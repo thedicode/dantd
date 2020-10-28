@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tag, Divider, Typography, Button } from 'antd';
-import '@testing-library/jest-dom/extend-expect';
 import { render, wait, waitForElement, fireEvent, cleanup } from '@testing-library/react';
 import Table from '../BasicTable';
 
