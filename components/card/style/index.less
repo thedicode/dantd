@@ -108,10 +108,15 @@
         color: rgba(0,0,0,0.6);
         font-size: 12px;
       }
-      .bg-percent {
-        background-color: #f97370;
+      .bg-full-percent, .bg-percent {
         opacity: 0.5;
         height: 100%;
+      }
+      .bg-full-percent {
+        background-color: #f97370;
+      }
+      .bg-percent {
+        background-color: rgb(111, 145, 208);
       }
     }
   }
@@ -136,7 +141,7 @@
       opacity: 0.6;
       color: #fff;
     }
-    .battery>.bg-percent {
+    .battery>.bg-percent, .bg-full-percent {
       background-color: #fff;
       opacity: 1;
     }

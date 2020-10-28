@@ -44,8 +44,8 @@ const BasicExample: React.FC = () => {
           </div>
         }
         showProgress={true}
-        progressLabel="已消耗2/30分钟"
-        progressPercent={80}
+        progressLabel="已消耗30/30分钟"
+        progressPercent={100}
         theme="default"
       />
        <BasicCard
@@ -117,8 +117,8 @@ const BasicExample: React.FC = () => {
           </div>
         }
         showProgress={true}
-        progressLabel="已消耗2/30分钟"
-        progressPercent={80}
+        progressLabel="已消耗30/30分钟"
+        progressPercent={100}
         theme="success"
         style={{marginTop: 20 }}
       />

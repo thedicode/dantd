@@ -52,6 +52,11 @@ function Card(props: IBasicCard) {
     [`${prefixCls}-bottom-custom`]: !!footerDom,
   });
 
+  const batteryCls = classNames({
+    'bg-full-percent':  progressPercent=== 100,
+    'bg-percent' : progressPercent !== 100,
+  })
+
   return (
     <div className={cardCls} style={style}>
       <div className={`${prefixCls}-header`}>
@@ -85,7 +90,7 @@ function Card(props: IBasicCard) {
           <div className="battery">
             <div className="label">{progressLabel}</div>
             <div
-              className="bg-percent"
+              className={batteryCls}
               style={{
                 width: `${progressPercent}%`,
               }}
