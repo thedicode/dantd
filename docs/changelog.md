@@ -12,6 +12,12 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## v0.0.10
+- 🐞 修改 `QueryForm` 下拉选择无法搜索的问题 
+- 🐞 修改 `DataTable` `isQuerySearchOnChange=false` 搜索参数不准的问题
+- 🐞 优化 `ColorSelect` 和 `Form` 结合的样式
+- 🛠 优化 `BasicCard` 样式，以及 `echarts` demo
+
 ## v0.0.8
 `2020-10-28`
 - 🆕 新增 `BasicCard` 卡片组件

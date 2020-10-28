@@ -101,6 +101,7 @@ const BasicExample: React.FC = () => {
           // total
           return data;
         }}
+        isQuerySearchOnChange={false}
         reloadBtnPos="left"
         reloadBtnType="btn"
         filterType="none"
