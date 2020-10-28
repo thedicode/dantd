@@ -295,6 +295,7 @@ const QueryForm = (props: IQueryFormProps) => {
             allowClear
             placeholder={itemPlaceholder}
             showSearch={true}
+            optionFilterProp="children"
             style={{ width: '100%' }}
             {...componentProps}
           >

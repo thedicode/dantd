@@ -571,16 +571,14 @@ function DataTable<T>(props: IDataTableProps<T>) {
   };
 
   const handleQuerySearch = (data) => {
-    setPagination({
-      ...paginationState,
-      current: 1,
-    });
-    // if (isQuerySearchOnChange) {
-    //   let fetchParams = getAllFetchParams();
-    //   fetchData(fetchParams);
-    // } else {
-    // }
-    setQueryFormValues(data);
+    if (paginationState.current !== 1) {
+      // 搜索之后，修改分页
+      setPagination({
+        ...paginationState,
+        current: 1,
+      });
+      setQueryFormValues(data);
+    }
     let fetchParams = getAllFetchParams();
     fetchData(fetchParams);
   };
