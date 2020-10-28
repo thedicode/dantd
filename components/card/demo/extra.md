@@ -18,8 +18,8 @@ const BasicExample: React.FC = () => {
         icon={<Icon type="code-sandbox" />}
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
       />

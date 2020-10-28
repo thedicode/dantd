@@ -88,8 +88,6 @@
     "bisheng-plugin-react": "^1.0.0",
     "bisheng-plugin-toc": "^0.4.4",
     "cross-env": "^7.0.2",
-    "echarts": "^4.9.0",
-    "echarts-for-react": "^2.0.16",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-config-react-app": "^5.0.2",

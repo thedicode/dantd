@@ -39,8 +39,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
         showProgress={true}
@@ -54,8 +54,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
         siderData={
@@ -112,8 +112,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
         showProgress={true}
@@ -149,8 +149,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
         style={{marginTop: 20 }}
@@ -186,8 +186,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
         rightHeader={
           <div>
-            <Icon type="edit" />
-            <Icon type="delete" style={{ marginLeft: 5 }} />
+            <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
           </div>
         }
         style={{marginTop: 20 }}
@@ -202,8 +202,8 @@ const BasicExample: React.FC = () => {
         subTitle="我是副标题"
           rightHeader={
             <div>
-              <Icon type="edit" />
-              <Icon type="delete" style={{ marginLeft: 5 }} />
+              <Icon style={{cursor: 'pointer'}} type="edit" />
+            <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
             </div>
           }
         siderData={

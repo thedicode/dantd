@@ -15,7 +15,7 @@ const BasicExample: React.FC = () => {
     <BasicCard
       title="Basic Card"
       value="99.999%"
-      icon={<Icon type="code-sandbox" />}
+      icon={<Icon style={{cursor: 'pointer'}} type="code-sandbox" />}
       siderData={
           [{
             label: '指标1',

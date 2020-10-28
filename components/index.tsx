@@ -4,7 +4,6 @@ export { default as BasicTable } from './basic-table';
 export { default as DataTable } from './data-table';
 export { default as Switch } from './switch';
 export { default as Code } from './code';
-export { default as BasicCard } from './card';
 export { default as VirtualSelect } from './virtual-select';
 export { default as ColorSelect } from './color-select';
 export { default as BasicCard } from './card';

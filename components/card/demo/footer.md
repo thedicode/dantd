@@ -53,12 +53,12 @@ const BasicExample: React.FC = () => {
       value="99.999%"
       rightHeader={
         <div>
-          <Icon type="edit" />
-          <Icon type="delete" style={{ marginLeft: 5 }} />
+          <Icon style={{cursor: 'pointer'}} type="edit" />
+          <Icon type="delete" style={{ marginLeft: 5, cursor: 'pointer' }} />
         </div>
       }
       footerDom={
-        <div style={{margin: '10px -20px -20px -20px' }}>
+        <div style={{margin: '10px -3px 0 -3px' }}>
           <ReactEcharts
             option={getLineChart(graphData)}
             notMerge={true}
