@@ -117,8 +117,8 @@ const BasicExample: React.FC = () => {
           </div>
         }
         showProgress={true}
-        progressLabel="已消耗30/30分钟"
-        progressPercent={100}
+        progressLabel="已消耗0/30分钟"
+        progressPercent={0}
         theme="success"
         style={{marginTop: 20 }}
       />

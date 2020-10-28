@@ -53,9 +53,9 @@ function Card(props: IBasicCard) {
   });
 
   const batteryCls = classNames({
-    'bg-full-percent':  progressPercent=== 100,
-    'bg-percent' : progressPercent !== 100,
-  })
+    'bg-full-percent': progressPercent === 100,
+    'bg-percent': progressPercent !== 100,
+  });
 
   return (
     <div className={cardCls} style={style}>
