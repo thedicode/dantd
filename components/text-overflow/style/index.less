@@ -1,0 +1,42 @@
+@import '../../style/index.less';
+
+@dantd-text-overflow-prefix-cls: ~'@{dantd-prefix}-text-overflow';
+
+.@{dantd-text-overflow-prefix-cls} {
+  width: 100%;
+  padding: 8px;
+
+  &-item{
+    margin: 6px 0;
+  }
+  &-summary{
+    color: #1890ff;
+    cursor: pointer;
+    &-icon{
+
+    }
+  }
+  &-tipContent{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.text-overflow-tip{
+    width: 100%;
+    .ant-tooltip-inner{
+        letter-spacing: 2px;
+        padding-right: 2px;
+        font-size: small;
+    }
+
+}
+
+.custom {
+    .ant-tooltip-inner {
+    }
+}
+
+.tip-params{
+}

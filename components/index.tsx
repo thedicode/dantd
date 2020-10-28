@@ -5,6 +5,7 @@ export { default as DataTable } from './data-table';
 export { default as Switch } from './switch';
 export { default as Code } from './code';
 export { default as VirtualSelect } from './virtual-select';
+export { default as TextOverflow } from './text-overflow';
 
 // forms
 export { default as BasicFormItems } from './basic-form-items';
