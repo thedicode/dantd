@@ -14,20 +14,21 @@ import ReactEcharts from 'echarts-for-react';
 const BasicExample: React.FC = () => { 
   function getLineChart(grahData = {xdata: [], ydata: []}) {
     const option = {
-      color: ['#fff'],
+      color: ['rgba(255, 255, 255, 0.5)'],
       tooltip: {
         trigger: 'axis',
       },
       grid: {
         show: false,
-        left: -80,
-        right: -80,
+        left: 0,
+        right: 0,
         top: 0,
         bottom:0,
       },
       xAxis: {
         show: false,
         data: _.get(grahData, 'xdata') || [],
+        boundaryGap: false,
       },
       yAxis: {
         type: 'value',
@@ -43,8 +44,8 @@ const BasicExample: React.FC = () => {
   }
 
   const graphData = {
-    xdata: ['1','2','3', '4'],
-    ydata: ['1','2','3', '4']
+    xdata: ['0','1','2','3', '4'],
+    ydata: ['1','1','2','3', '4']
   };
 
   return (
@@ -58,14 +59,12 @@ const BasicExample: React.FC = () => {
         </div>
       }
       footerDom={
-        <div style={{margin: '10px -3px 0 -3px' }}>
-          <ReactEcharts
-            option={getLineChart(graphData)}
-            notMerge={true}
-            lazyUpdate={true}
-            style={{ width: '100%', height: 50, opacity: 0.6 }}
-          />
-        </div>
+        <ReactEcharts
+          option={getLineChart(graphData)}
+          notMerge={true}
+          lazyUpdate={true}
+          style={{ width: '100%', height: 50, opacity: 0.6 }}
+        />
       }
       theme="success"
     />
