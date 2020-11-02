@@ -101,9 +101,15 @@ const data = [
   },
 ];
 
+const newDataSource = [];
+for (let i = 0; i < 200; i++) {
+  const sItem = data[i%data.length];
+  newDataSource.push(sItem);
+}
+
 ReactDOM.render(
   <div>
-    <Table columns={columns} dataSource={data} />
+    <Table columns={columns} dataSource={newDataSource} />
   </div>,
   mountNode,
 );
