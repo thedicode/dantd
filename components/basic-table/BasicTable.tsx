@@ -101,6 +101,7 @@ function BasicTable<T>(props: IBasicTableProps<T>) {
   const { t } = useIntl();
   const [dataSource, setDataSource] = useState(tmpDataSource);
   const [queryFormValues, setQueryFormValues] = useState<any>({});
+  const [isQueryInit, setQueryInit] = useState(false);
   const {
     showFilter = true,
     showSearch = true,
@@ -608,6 +609,13 @@ function BasicTable<T>(props: IBasicTableProps<T>) {
     setSearchQuery(query);
   };
 
+  const handleQueryFormInit = (data) => {
+    if (!isQueryInit) {
+      setQueryFormValues(data);
+      setQueryInit(true);
+    }
+  };
+
   const handleQueryFormChange = (data) => {
     setQueryFormValues(data);
   };
@@ -796,7 +804,7 @@ function BasicTable<T>(props: IBasicTableProps<T>) {
         {queryFormColumns && (
           <div className={tableQueryCls}>
             <QueryForm
-              onChange={isQuerySearchOnChange ? handleQueryFormChange : () => {}}
+              onChange={isQuerySearchOnChange ? handleQueryFormChange : handleQueryFormInit}
               onReset={handleQueryFormReset}
               onSearch={handleQueryFormChange}
               columns={queryFormColumns}
@@ -913,6 +921,7 @@ function BasicTable<T>(props: IBasicTableProps<T>) {
                   size: 'small',
                   showTotal: showTotal,
                   showSizeChanger: true,
+                  showQuickJumper: true,
                   pageSizeOptions: pageSizeOptions,
                   ...props.pagination,
                 }}

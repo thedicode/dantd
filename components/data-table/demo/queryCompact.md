@@ -63,6 +63,7 @@ const queryFormColumns = [
   {
     type: 'select',
     title: '分类',
+    initialValue: ['科技'],
     dataIndex: 'category',
     selectMode: 'multiple',
     options: [

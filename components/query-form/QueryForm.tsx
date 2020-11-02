@@ -41,7 +41,6 @@ export interface IColumnsType {
     title: string;
     value: string | number;
   }[];
-  // showColon?: boolean;
   formItemLayout?: any;
 }
 

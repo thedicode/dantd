@@ -177,7 +177,6 @@ function DataTable<T>(props: IDataTableProps<T>) {
     pageParams,
   } = props;
 
-  const [queryFormValues, setQueryFormValues] = useState<any>({});
   const tableClassName = classNames(prefixCls, props.className);
   const tableContentClassName = classNames({
     [`${prefixCls}-table-content`]: true,
@@ -193,6 +192,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
     [`${prefixCls}-query-compact`]: queryMode === 'compact',
   });
 
+  // hooks
   const columnsMap = useMemo(() => {
     const result = {} as any;
     if (props.columns && props.columns.length > 0) {
@@ -207,6 +207,9 @@ function DataTable<T>(props: IDataTableProps<T>) {
     }
     return result;
   }, [props.columns]);
+
+  const [queryFormValues, setQueryFormValues] = useState<any>({});
+  const [isQueryInit, setQueryInit] = useState(false);
   const filterSearchInputRef = useRef({}) as any;
   const clearFiltersRef = useRef({}) as any;
   const [dataSource, setDataSource] = useState([]);
@@ -552,6 +555,13 @@ function DataTable<T>(props: IDataTableProps<T>) {
   const handleSortClear = () => {
     sorterDispatch({ type: 'clear' });
     checkRightHeader(null, {});
+  };
+
+  const handleQueryFormInit = (data) => {
+    if (!isQueryInit) {
+      setQueryFormValues(data);
+      setQueryInit(true);
+    }
   };
 
   const handleQueryFormChange = (data) => {
@@ -1003,7 +1013,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
         {queryFormColumns && (
           <div className={tableQueryCls}>
             <QueryForm
-              onChange={isQuerySearchOnChange ? handleQueryFormChange : () => {}}
+              onChange={isQuerySearchOnChange ? handleQueryFormChange : handleQueryFormInit}
               onReset={handleQueryFormReset}
               onSearch={handleQuerySearch}
               columns={queryFormColumns}
@@ -1119,6 +1129,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
                   size: 'small',
                   showTotal: showTotal,
                   showSizeChanger: true,
+                  showQuickJumper: true,
                   pageSizeOptions: pageSizeOptions,
                   ...props.pagination,
                   ...paginationState,

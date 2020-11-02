@@ -53,6 +53,7 @@ const queryFormColumns = [
   {
     type: 'input',
     title: '标题',
+    initialValue: '40',
     dataIndex: 'title',
   },
   {
