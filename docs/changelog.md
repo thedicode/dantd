@@ -12,6 +12,10 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
+## v0.0.11
+- 🐞 修改 Table【首次】搜索的时候，没有带上 QueryFormColumns 里面 initialValue 里面的值
+- 🛠 优化 Table 默认分页增加【跳转至】的功能
+
 ## v0.0.10
 - 🐞 修改 `QueryForm` 下拉选择无法搜索的问题 
 - 🐞 修改 `DataTable` `isQuerySearchOnChange=false` 搜索参数不准的问题
