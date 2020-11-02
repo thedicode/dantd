@@ -32,15 +32,15 @@ export default class ComponentDoc extends React.Component {
     const { doc, location } = this.props;
     const { content, meta } = doc;
     const locale = 'zh-CN';
-    const demos = Object.keys(props.demos).map(key => props.demos[key]);
+    const demos = Object.keys(props.demos).map((key) => props.demos[key]);
     const { expandAll, showRiddleButton } = this.state;
 
     const isSingleCol = meta.cols === 1;
     const leftChildren = [];
     const rightChildren = [];
-    const showedDemo = demos.some(demo => demo.meta.only)
-      ? demos.filter(demo => demo.meta.only)
-      : demos.filter(demo => demo.preview);
+    const showedDemo = demos.some((demo) => demo.meta.only)
+      ? demos.filter((demo) => demo.meta.only)
+      : demos.filter((demo) => demo.preview);
     showedDemo
       .sort((a, b) => a.meta.order - b.meta.order)
       .forEach((demoData, index) => {
@@ -64,7 +64,7 @@ export default class ComponentDoc extends React.Component {
       'code-box-expand-trigger-active': expandAll,
     });
 
-    const jumper = showedDemo.map(demo => {
+    const jumper = showedDemo.map((demo) => {
       const { title } = demo.meta;
       const localizeTitle = title[locale] || title;
       return (
@@ -79,7 +79,7 @@ export default class ComponentDoc extends React.Component {
       'show-riddle-button': showRiddleButton,
     });
     return (
-      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - Ant Design`}>
+      <DocumentTitle title={`${subtitle || ''} ${title[locale] || title} - Dantd`}>
         <article className={articleClassName}>
           <Affix className="toc-affix" offsetTop={16}>
             <ul id="demo-toc" className="toc">
@@ -141,4 +141,3 @@ export default class ComponentDoc extends React.Component {
     );
   }
 }
-

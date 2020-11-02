@@ -11,7 +11,7 @@ export default class Article extends React.Component {
     intl: PropTypes.object.isRequired,
   };
 
-  onResourceClick = e => {
+  onResourceClick = (e) => {
     if (!window.gtag) {
       return;
     }
@@ -42,7 +42,7 @@ export default class Article extends React.Component {
     const timelineItems = [];
     let temp = [];
     let i = 1;
-    Children.forEach(article.props.children, child => {
+    Children.forEach(article.props.children, (child) => {
       if (child.type === 'h2' && temp.length > 0) {
         timelineItems.push(<Timeline.Item key={i}>{temp}</Timeline.Item>);
         temp = [];
@@ -68,7 +68,7 @@ export default class Article extends React.Component {
     } = this.context;
     const isNotTranslated = locale === 'en-US' && typeof title === 'object';
     return (
-      <DocumentTitle title={`${title[locale] || title} - Ant Design`}>
+      <DocumentTitle title={`${title[locale] || title} - Dantd`}>
         {/* eslint-disable-next-line */}
         <article className="markdown" onClick={this.onResourceClick}>
           {isNotTranslated && (
@@ -122,4 +122,3 @@ export default class Article extends React.Component {
     );
   }
 }
-

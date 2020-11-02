@@ -56,7 +56,7 @@ export default class Demo extends React.Component {
     return '';
   }
 
-  handleCodeExpand = demo => {
+  handleCodeExpand = (demo) => {
     const { codeExpand } = this.state;
     this.setState({ codeExpand: !codeExpand });
     this.track({
@@ -65,11 +65,11 @@ export default class Demo extends React.Component {
     });
   };
 
-  saveAnchor = anchor => {
+  saveAnchor = (anchor) => {
     this.anchor = anchor;
   };
 
-  handleCodeCopied = demo => {
+  handleCodeCopied = (demo) => {
     this.setState({ copied: true });
     this.track({
       type: 'copy',
@@ -77,7 +77,7 @@ export default class Demo extends React.Component {
     });
   };
 
-  onCopyTooltipVisibleChange = visible => {
+  onCopyTooltipVisibleChange = (visible) => {
     if (visible) {
       this.setState({
         copyTooltipVisible: visible,
@@ -145,7 +145,7 @@ export default class Demo extends React.Component {
     const sourceCode = this.getSourceCode();
 
     const codepenPrefillConfig = {
-      title: `${localizedTitle} - Ant Design Demo`,
+      title: `${localizedTitle} - Dantd Demo`,
       html,
       js: sourceCode
         .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'antd';/, 'const { $1 } = antd;')
@@ -167,12 +167,12 @@ export default class Demo extends React.Component {
         'react-router-dom/umd/react-router-dom.min.js',
         'react-router@3.x/umd/ReactRouter.min.js',
       ]
-        .map(url => `https://unpkg.com/${url}`)
+        .map((url) => `https://unpkg.com/${url}`)
         .join(';'),
       js_pre_processor: 'typescript',
     };
     const riddlePrefillConfig = {
-      title: `${localizedTitle} - Ant Design Demo`,
+      title: `${localizedTitle} - Dantd Demo`,
       js: sourceCode,
       css: prefillStyle,
     };
