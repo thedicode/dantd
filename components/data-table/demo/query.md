@@ -82,7 +82,6 @@ const queryFormColumns = [
   },
 ];
 
-
 const listUrl = 'https://service-dmgco1kc-1302187237.gz.apigw.tencentcs.com/release/table_api';
 
 const BasicExample: React.FC = () => {
