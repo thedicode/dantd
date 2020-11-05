@@ -12,12 +12,12 @@ timeline: true
 - 主版本号：含有破坏性更新和新特性，不在发布周期内。
 
 ---
-### v0.0.13
+## v0.0.13
 `2020-11-05`
 - 🐞 修改 `DataTable` 点击 `QueryForm` 搜索两次的问题
 - 🛠 优化 `QueryForm`，支持设置 `isResetClearAll` 点击搜索时，清空所有值，否则根据 `initialValue` 重置。
 
-### v0.0.12
+## v0.0.12
 -  🛠 优化 Table IE 样式
 
 ## v0.0.11
