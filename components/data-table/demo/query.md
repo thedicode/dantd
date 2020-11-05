@@ -94,6 +94,9 @@ const BasicExample: React.FC = () => {
       <DataTable
         columns={columns}
         url={listUrl}
+        queryFormProps={{
+          isResetClearAll: true
+        }}
         queryFormColumns={queryFormColumns}
         // isQuerySearchOnChange={false}
         apiCallback={data => {

@@ -13,7 +13,7 @@ subtitle: 查询表单
 ## API
 
 
-### BasicFormItems
+### QueryForm
 
 | 参数       | 说明           | 类型                | 默认值 |
 | :--------- | :------------- | :------------------ | :----- |
@@ -27,6 +27,7 @@ subtitle: 查询表单
 | onChange | 表单的值改变时触发的回调 | Function(values, form) | - |
 | onSearch | 点击查询按钮的回调 | Function(values, form) | - |
 | onReset | 点击重置按钮的回调 | Function(form) | - |
+| isResetClearAll | 点击重置时，是清空form里面的值，还是根据 `initialValue` 重置 | boolean | false     |
 | getFormInstance | 只用来获取Form实例的回调 | Function(form) | - |
 | defaultCollapse | 是否默认「展开」 | boolean | true     |
 | colConfig | Col 布局配置 | `{lg:number;md:number;xxl:number;xl:number;sm:number;xs:number}` | `{xs:24,sm:24,md:12,lg:12,xl:8,xxl:6}` |

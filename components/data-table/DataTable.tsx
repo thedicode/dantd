@@ -210,6 +210,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
 
   const [queryFormValues, setQueryFormValues] = useState<any>({});
   const [isQueryInit, setQueryInit] = useState(false);
+  const isPageChangeNoSearch = useRef<boolean>(false);
   const filterSearchInputRef = useRef({}) as any;
   const clearFiltersRef = useRef({}) as any;
   const [dataSource, setDataSource] = useState([]);
@@ -303,10 +304,6 @@ function DataTable<T>(props: IDataTableProps<T>) {
     let fetchParams = getAllFetchParams();
     fetchParams[paginationState.curPageName] = 1;
 
-    // fetchData({
-    //   ...queryFormValues,
-    //   ...fetchParams,
-    // });
     fetchData(fetchParams);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQueryFormValues]);
@@ -322,6 +319,11 @@ function DataTable<T>(props: IDataTableProps<T>) {
 
   useEffect(() => {
     if (!isUrlLoad.current || !paginationState.pageSize) {
+      return;
+    }
+
+    if (isPageChangeNoSearch.current) {
+      isPageChangeNoSearch.current = false;
       return;
     }
     let fetchParams = getAllFetchParams();
@@ -565,6 +567,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
   };
 
   const handleQueryFormChange = (data) => {
+    isPageChangeNoSearch.current = true;
     setPagination({
       ...paginationState,
       current: 1,
@@ -573,6 +576,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
   };
 
   const handleQueryFormReset = (data) => {
+    isPageChangeNoSearch.current = true;
     setPagination({
       ...paginationState,
       current: 1,
@@ -582,6 +586,9 @@ function DataTable<T>(props: IDataTableProps<T>) {
 
   const handleQuerySearch = (data) => {
     if (paginationState.current > 1) {
+      // 这次修改分页参数
+      isPageChangeNoSearch.current = true;
+
       setPagination({
         ...paginationState,
         current: 1,
@@ -589,8 +596,8 @@ function DataTable<T>(props: IDataTableProps<T>) {
       setQueryFormValues(data);
     } else {
       setQueryFormValues(data);
-      let fetchParams = getAllFetchParams();
-      fetchData(fetchParams);
+      // let fetchParams = getAllFetchParams();
+      // fetchData(fetchParams);
     }
   };
 

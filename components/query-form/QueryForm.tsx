@@ -61,6 +61,7 @@ export interface IQueryFormProps extends FormComponentProps {
   onSearch?: (data: any, form: any) => any;
   onReset?: (data: any, form: any) => any;
   getFormInstance?: (form: any) => any;
+  isResetClearAll: boolean;
   antConfig?: {} & ConfigProviderProps;
   defaultCollapse?: boolean;
   colConfig?:
@@ -157,6 +158,7 @@ const QueryForm = (props: IQueryFormProps) => {
     showOptionBtns = true,
     showCollapseButton = true,
     defaultCollapse = false,
+    isResetClearAll = false,
     onChange,
     onSearch,
     onReset,
@@ -179,7 +181,7 @@ const QueryForm = (props: IQueryFormProps) => {
   const windowSize = useAntdMediaQuery();
   const itemColConfig = colConfig || defaultColConfig;
   const [colSize, setColSize] = useState(getSpanConfig(itemColConfig || 8, windowSize));
-  const { getFieldDecorator, validateFields, getFieldsValue, resetFields } = form;
+  const { getFieldDecorator, validateFields, getFieldsValue, resetFields, setFieldsValue } = form;
   const [collapsed, setCollapse] = useState(defaultCollapse);
   const fieldsValue = getFieldsValue();
 
@@ -434,7 +436,18 @@ const QueryForm = (props: IQueryFormProps) => {
   };
 
   const handleReset = () => {
-    resetFields();
+    if (isResetClearAll) {
+      const resetFieldsObj = columns.reduce((acc, cur: IColumnsType) => {
+        return {
+          ...acc,
+          [cur.dataIndex]: undefined,
+        };
+      }, {});
+      setFieldsValue(resetFieldsObj);
+    } else {
+      resetFields();
+    }
+
     setTimeout(() => {
       if (onReset) {
         onReset(getFieldsValue(), form);
