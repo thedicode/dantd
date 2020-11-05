@@ -2772,7 +2772,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   max-width: 50%;
 }
 .dantd-table-header-filter-left-minh {
-  min-height: 40px;
+  min-height: 32px;
 }
 .dantd-table-header-filter-right {
   display: flex !important;
@@ -3814,7 +3814,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   max-width: 50%;
 }
 .dantd-data-table-header-filter-left-minh {
-  min-height: 40px;
+  min-height: 32px;
 }
 .dantd-data-table-header-filter-right {
   display: flex !important;
