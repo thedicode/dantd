@@ -16,6 +16,7 @@ const columns = [
     title: '实例名称',
     dataIndex: 'name',
     initialValue: '机器3011',
+    isInputPressEnterCallSearch: true,
     colStyle: {
       width: '600px'
     }

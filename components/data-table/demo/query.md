@@ -55,6 +55,7 @@ const queryFormColumns = [
     title: '标题',
     initialValue: '40',
     dataIndex: 'title',
+    isInputPressEnterCallSearch: true,
   },
   {
     type: 'select',

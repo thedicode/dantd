@@ -43,6 +43,7 @@ subtitle: 查询表单
 | title      | 标题    | string              |  -      |
 | dataIndex      | form表单的唯一标识，不可以重复   | string              |  -      |
 | placeholder | 占位文案，默认会根据 `title` 自动生成 | string | -     |
+| isInputPressEnterCallSearch | 输入框按回车的时候，触发搜索 | boolean | -     |
 | valuePropName | 子节点的值的属性，如 Switch 的是 'checked' | string | 'value'    |
 | required | 是否对参数进行必填校验 | boolean | true      |
 | colStyle | `colMode='style'` 时，可以设置单个 `Column` 的样式| `React.CSSProperties` | -      |

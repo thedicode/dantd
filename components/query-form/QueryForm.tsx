@@ -32,6 +32,7 @@ export interface IColumnsType {
   required?: boolean;
   colStyle?: React.CSSProperties;
   initialValue?: any;
+  isInputPressEnterCallSearch?: boolean;
   size?: ItemSize;
   rules?: any[]; // 校验规则
   component?: React.ReactNode;
@@ -203,6 +204,42 @@ const QueryForm = (props: IQueryFormProps) => {
 
   const collapseHideNum = getCollapseHideNum(getSpanConfig(itemColConfig || 8, windowSize));
 
+  const handleSearch = () => {
+    validateFields(async (errors, values) => {
+      if (errors) {
+        return;
+      }
+
+      if (onSearch) {
+        onSearch(values, form);
+      }
+    });
+  };
+
+  const handleReset = () => {
+    if (isResetClearAll) {
+      const resetFieldsObj = columns.reduce((acc, cur: IColumnsType) => {
+        return {
+          ...acc,
+          [cur.dataIndex]: undefined,
+        };
+      }, {});
+      setFieldsValue(resetFieldsObj);
+    } else {
+      resetFields();
+    }
+
+    setTimeout(() => {
+      if (onReset) {
+        onReset(getFieldsValue(), form);
+      }
+    });
+  };
+
+  const handlePressEnter = () => {
+    handleSearch();
+  };
+
   const renderInputItem = (colItem) => {
     const {
       initialValue,
@@ -211,6 +248,7 @@ const QueryForm = (props: IQueryFormProps) => {
       required,
       componentProps = {},
       placeholder,
+      isInputPressEnterCallSearch,
       formItemLayout,
       rules,
       size = 'default',
@@ -240,6 +278,7 @@ const QueryForm = (props: IQueryFormProps) => {
             data-testid="field-input"
             size={size}
             placeholder={itemPlaceholder}
+            onPressEnter={isInputPressEnterCallSearch ? handlePressEnter : () => {}}
             {...componentProps}
           />,
         )}
@@ -421,38 +460,6 @@ const QueryForm = (props: IQueryFormProps) => {
         </Form.Item>
       </Col>
     );
-  };
-
-  const handleSearch = () => {
-    validateFields(async (errors, values) => {
-      if (errors) {
-        return;
-      }
-
-      if (onSearch) {
-        onSearch(values, form);
-      }
-    });
-  };
-
-  const handleReset = () => {
-    if (isResetClearAll) {
-      const resetFieldsObj = columns.reduce((acc, cur: IColumnsType) => {
-        return {
-          ...acc,
-          [cur.dataIndex]: undefined,
-        };
-      }, {});
-      setFieldsValue(resetFieldsObj);
-    } else {
-      resetFields();
-    }
-
-    setTimeout(() => {
-      if (onReset) {
-        onReset(getFieldsValue(), form);
-      }
-    });
   };
 
   return (
