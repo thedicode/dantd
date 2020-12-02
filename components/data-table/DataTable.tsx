@@ -452,6 +452,8 @@ function DataTable<T>(props: IDataTableProps<T>) {
       }
     });
 
+    isPageChangeNoSearch.current = false;
+
     setPagination(pagination);
 
     checkRightHeader(filters, sorter);
