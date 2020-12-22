@@ -28,15 +28,15 @@ const BasicExample: React.FC = () => {
             label: '指标2',
             value: '20%'
           }, {
-            label: '指标2',
+            label: '指标3',
             value: '20%'
           }, {
-            label: '指标2',
+            label: '指标3',
             value: '20%'
           }]
         }
       showProgress={true}
-      progressLabel="已消耗2/30分钟"
+      progressLabel="已消耗21/30分钟"
       progressPercent={80}
     />
   );
