@@ -415,6 +415,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
         setLoading(false);
       })
       .catch(() => {
+        props.apiCallback(res);
         setLoading(false);
       });
   }
