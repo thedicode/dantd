@@ -400,9 +400,8 @@ function DataTable<T>(props: IDataTableProps<T>) {
     const res = await fetch(fetchUrl, {
       ...fetchOptions,
     });
-    const originRes = _.cloneDeep(res);
-    if (res.status < 200 || res.status >= 300 && props.apiErrorCallback) {
-      props.apiErrorCallback(originRes);
+    if ((res.status < 200 || res.status >= 300) && props.apiErrorCallback) {
+      props.apiErrorCallback(res);
       setLoading(false);
     }else{
       res
@@ -422,7 +421,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
         })
         .catch(() => {
           if(props.apiErrorCallback){
-            props.apiErrorCallback(originRes);
+            props.apiErrorCallback(res);
           }
           setLoading(false);
         });
