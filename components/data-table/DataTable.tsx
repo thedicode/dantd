@@ -63,6 +63,7 @@ interface IDataTableProps<T> extends TableProps<T> {
   hideContentBorder?: boolean;
   fetchOptions?: any; // 跨域等配置 https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
   apiCallback?: (data: any) => any; // 处理 api 返回的数据
+  apiErrorCallback?: (data: any) => any; // 处理 api 错误时返回的数据
   onSearch?: (data: string) => any; // search回调
   customQueryCallback?: (data: any) => any; // 自定义查询参数，会使用 queryString.stringify 处理
   customFetchUrlCallback?: (url: string) => string; // 自定义查询参数，会使用 queryString.stringify 处理
@@ -400,25 +401,33 @@ function DataTable<T>(props: IDataTableProps<T>) {
       ...fetchOptions,
     });
     const originRes = _.cloneDeep(res);
-    res
-      .json()
-      .then((res) => {
-        let callbackData = res;
-        if (props.apiCallback) {
-          callbackData = props.apiCallback(res);
-        }
-        setDataSource(callbackData.data);
-        const tmpPagination = {
-          ...paginationState,
-          total: callbackData.total,
-        };
-        setPagination(tmpPagination);
-        setLoading(false);
-      })
-      .catch(() => {
-        props.apiCallback(originRes);
-        setLoading(false);
-      });
+    if (res.status < 200 || res.status >= 300 && props.apiErrorCallback) {
+      props.apiErrorCallback(originRes);
+      setLoading(false);
+    }else{
+      res
+        .json()
+        .then((res) => {
+          let callbackData = res;
+          if (props.apiCallback) {
+            callbackData = props.apiCallback(res);
+          }
+          setDataSource(callbackData.data);
+          const tmpPagination = {
+            ...paginationState,
+            total: callbackData.total,
+          };
+          setPagination(tmpPagination);
+          setLoading(false);
+        })
+        .catch(() => {
+          if(props.apiErrorCallback){
+            props.apiErrorCallback(originRes);
+          }
+          setLoading(false);
+        });
+    } 
+    
   }
 
   const handleTableChange = (pagination: any, filters: any, sorter: any) => {
