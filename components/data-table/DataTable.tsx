@@ -399,6 +399,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
     const res = await fetch(fetchUrl, {
       ...fetchOptions,
     });
+    const originRes = _.cloneDeep(res);
     res
       .json()
       .then((res) => {
@@ -415,7 +416,7 @@ function DataTable<T>(props: IDataTableProps<T>) {
         setLoading(false);
       })
       .catch(() => {
-        props.apiCallback(res);
+        props.apiCallback(originRes);
         setLoading(false);
       });
   }
