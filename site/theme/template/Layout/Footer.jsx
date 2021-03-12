@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 const Footer = () => (
   <footer id="footer" className="dark">
     <Row className="bottom-bar">
-      <span>Power by joking_zhang</span>
+      <span>Power by 滴滴运维前端</span>
     </Row>
   </footer>
 );

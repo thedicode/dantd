@@ -4,7 +4,8 @@ import { Link } from 'bisheng/router';
 import { injectIntl } from 'react-intl';
 import { Popover, Button, Row, Col } from 'antd';
 import landing from './landing.png';
-import qrcode from './qrcode.png';
+import quncode from './qun.jpg';
+import personalcode from './personal.jpg';
 function getStyle() {
   return `
     .main-wrapper {
@@ -60,13 +61,9 @@ const HomePage = (props) => {
         <section className="home-s4">
           <div className="wrapper">
             <h3>联系我们</h3>
+            <div className="sub-title">欢迎扫描下方二维码，加入我们的用户交流群，若二维码过期，可添加小客服微信zj80900111拉你入群，暗号：dantd</div>
             <div className="img-wrapper">
-              <a
-                target="_blank"
-                href="https://qr.dingtalk.com/action/joingroup?code=v1,k1,2Vd6ejhTjOG/N3biCDrNJIll3BlVGlO+cTKhGZe9LLM=&_dt_no_comment=1&origin=11"
-              >
-                <img src={qrcode} alt="" />
-              </a>
+              <a><img src={quncode} alt="" /></a>
             </div>
           </div>
         </section>
