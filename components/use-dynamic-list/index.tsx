@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 
 export default function useDynamicList<T>(initialValue: T[]) {
   const counterRef = useRef(-1);
@@ -17,6 +17,10 @@ export default function useDynamicList<T>(initialValue: T[]) {
     });
     return initialValue || [];
   });
+
+  useEffect(() => {
+    setList(initialValue);
+  }, [initialValue])
 
   const resetList = (newList: T[] = []) => {
     keyList.current = [];
