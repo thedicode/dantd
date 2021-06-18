@@ -18,10 +18,6 @@ export default function useDynamicList<T>(initialValue: T[]) {
     return initialValue || [];
   });
 
-  useEffect(() => {
-    setList(initialValue);
-  }, [initialValue])
-
   const resetList = (newList: T[] = []) => {
     keyList.current = [];
     counterRef.current = -1;
