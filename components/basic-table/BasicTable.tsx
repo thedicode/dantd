@@ -19,6 +19,7 @@ export interface ITableColumnProps<T> extends ColumnProps<T> {
   commonFilter?: boolean; // 使用组件提供的过滤
   commonSorter?: boolean; // 使用组件提供的排序
   commonSearch?: boolean; // 使用组件提供的搜索
+  filterEnum?: object; // 筛选内容转换枚举
   searchRender?: (
     value: React.ReactText,
     row: T,
@@ -429,12 +430,15 @@ function BasicTable<T>(props: IBasicTableProps<T>) {
       // filter
       if (currentItem.commonFilter && !currentItem.filters) {
         const filters = _.uniq(_.map(dataSource, columnItem.dataIndex));
-        currentItem.filters = filters.map((value: string) => {
-          return {
-            text: value,
-            value,
-          };
-        });
+        // add: value为null的内容报错筛选掉
+        currentItem.filters = filters
+          .filter(v => v !== null)
+          .map((value: string) => {
+            return {
+              text: currentItem.filterEnum ? currentItem.filterEnum[value] : value,
+              value,
+            };
+          });
 
         currentItem.filterIcon = () => <Icon data-testid="icon-filter" type="filter" />;
         currentItem.filteredValue = columnsState[columnItem.dataIndex as string].value;
