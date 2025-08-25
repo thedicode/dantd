@@ -98,7 +98,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.2.0",
     "eslint-plugin-testing-library": "^2.2.3",
-    "father": "^2.29.2",
+    "father": "^4.6.1",
     "gh-pages": "^3.1.0",
     "husky": "^3.0.9",
     "intersection-observer": "^0.7.0",
